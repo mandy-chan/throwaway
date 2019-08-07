@@ -9,6 +9,8 @@ include: "/Views/products.view"
 include: "/Views/users.view"
 include: "/Views/Subfolder_views/connection_reg_r3.view"
 
+include: "//project_import_2/product_categories.view"
+
 include: "/Views/Subfolder_views/*.view"
 
 datagroup: project_import_1_default_datagroup {
@@ -19,8 +21,6 @@ datagroup: project_import_1_default_datagroup {
 persist_with: project_import_1_default_datagroup
 
 explore: connection_reg_r3 {}
-
-explore: derived_test_table_3_20190510 {}
 
 explore: events {
   join: users {
@@ -72,7 +72,7 @@ explore: orders {
   }
 }
 
-explore: products {}
+explore: product_categories {}
 
 explore: schema_migrations {}
 
