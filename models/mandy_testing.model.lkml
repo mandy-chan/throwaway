@@ -8,7 +8,13 @@ datagroup: mandy_testing_default_datagroup {
   max_cache_age: "1 hour"
 }
 
+datagroup: quick_one {
+  sql_trigger: select minute(current_time()) % 10 = 0 ;;
+}
+
 persist_with: mandy_testing_default_datagroup
+
+explore: rb_pdt {}
 
 explore: connection_reg_r3 {}
 
