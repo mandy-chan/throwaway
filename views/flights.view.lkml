@@ -1,6 +1,10 @@
 view: flights {
   sql_table_name: demo_db.flights ;;
 
+  dimension: constant {
+    sql: '@{bigquery_dataset}' ;;
+  }
+
   dimension: arr_delay {
     type: number
     sql: ${TABLE}.arr_delay ;;
