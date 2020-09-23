@@ -82,7 +82,6 @@ view: users {
       events.count,
       orders.count,
       saralooker.count,
-      user_data.count
-    ]
+]
   }
 }

@@ -26,6 +26,6 @@ view: user_data {
 
   measure: count {
     type: count
-    drill_fields: [id, users.last_name, users.id, users.first_name]
+    drill_fields: [id, users.id, users.first_name, users.last_name]
   }
 }
