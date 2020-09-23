@@ -88,8 +88,6 @@ explore: user_data {
 
 explore: users {}
 
-explore: vvimgsrc1onerroralert2ll {}
-
 explore: xin_test_for_bug2 {}
 
 explore: xss_test {}
