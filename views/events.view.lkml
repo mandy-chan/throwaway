@@ -38,8 +38,4 @@ view: events {
     sql: ${TABLE}.value ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id, users.last_name, users.id, users.first_name]
-  }
 }
