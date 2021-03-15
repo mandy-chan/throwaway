@@ -1,22 +1,14 @@
 connection: "thelook"
 
 # include all the views
-include: "/Views/events.view"
-include: "/Views/inventory_items.view"
-include: "/Views/order_items.view"
-include: "/Views/orders.view"
-include: "/Views/products.view"
-include: "/Views/users.view"
-include: "/Views/Subfolder_views/connection_reg_r3.view"
+include: "/views/**/*.view"
 
-include: "/Views/Subfolder_views/*.view"
-
-datagroup: project_import_1_default_datagroup {
+datagroup: mandy_testing_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
 
-persist_with: project_import_1_default_datagroup
+persist_with: mandy_testing_default_datagroup
 
 explore: connection_reg_r3 {}
 
@@ -27,6 +19,10 @@ explore: events {
     relationship: many_to_one
   }
 }
+
+explore: flights {}
+
+explore: imgsrc1onerroralert2 {}
 
 explore: inventory_items {
   join: products {
@@ -70,7 +66,15 @@ explore: orders {
   }
 }
 
-explore: product_categories {}
+explore: products {}
+
+explore: saralooker {
+  join: users {
+    type: left_outer
+    sql_on: ${saralooker.user_id} = ${users.id} ;;
+    relationship: many_to_one
+  }
+}
 
 explore: schema_migrations {}
 
@@ -84,10 +88,36 @@ explore: user_data {
 
 explore: users {}
 
-explore: users_nn {}
+explore: xin_test_for_bug2 {}
 
-explore: zozo_table_20190507 {}
+explore: xss_test {}
 
-explore: zozo_table_20190508 {}
+explore: xss_test_1 {}
 
-explore: zozo_table_null {}
+explore: xss_test_10 {}
+
+explore: xss_test_11 {}
+
+explore: xss_test_12 {}
+
+explore: xss_test_13 {}
+
+explore: xss_test_14 {}
+
+explore: xss_test_15 {}
+
+explore: xss_test_16 {}
+
+explore: xss_test_2 {}
+
+explore: xss_test_4 {}
+
+explore: xss_test_5 {}
+
+explore: xss_test_6 {}
+
+explore: xss_test_7 {}
+
+explore: xss_test_8 {}
+
+explore: xss_test_9 {}
